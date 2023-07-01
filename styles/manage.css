@@ -3,6 +3,7 @@
     padding: 0%;
     box-sizing: border-box;
 
+
 }
 
 
@@ -29,7 +30,7 @@ body {
 
 @keyframes slideInleft {
     from {
-        transform: translateX(-15vw);
+        transform: translateX(-10vw);
     }
 
     to {
@@ -39,7 +40,7 @@ body {
 
 @keyframes slideInright {
     from {
-        transform: translateX(15vw);
+        transform: translateX(10vw);
     }
 
     to {
@@ -75,7 +76,7 @@ body {
     position: absolute;
     top: 50%;
     left: 0px;
-    font-size: 1em;
+    font-size: 1.1em;
     color: var(--clr-body-bg);
     font-weight: 500;
     pointer-events: none;
@@ -95,7 +96,8 @@ body {
     outline: none;
     font-size: 1.1em;
     font-weight: 500;
-    padding: 22px 15px 0 0px;
+    padding: 22px 15px 0 10px;
+    color: white;
 }
 
 .btn {
@@ -117,6 +119,7 @@ select {
     font-size: 120%;
     width: 100%;
     border-bottom: 2px var(--clr-body-bg) solid;
+    color: white;
 }
 
 .sidebar {
@@ -157,8 +160,8 @@ select {
 .sidebar ul li a {
     background-color: var(--clr-body-bg);
     display: block;
-    padding: 5vh 10%;
-    font-size: 2em;
+    padding: 6vh 10%;
+    font-size: 20px;
     position: relative;
     color: white;
 }

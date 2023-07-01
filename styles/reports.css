@@ -277,7 +277,7 @@ input[type="radio"] {
 .sidebar ul li a {
     background-color: var(--clr-body-bg);
     display: block;
-    padding: 8vh 10%;
+    padding: 6vh 10%;
     font-size: 20px;
     position: relative;
     color: white;

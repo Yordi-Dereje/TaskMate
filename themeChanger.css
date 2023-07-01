@@ -89,7 +89,7 @@ h3 {
 }
 
 .color-picker input[type="radio"]#pink {
-    --radio-color: hsl(350, 100%, 88%);
+    --radio-color: hsl(254, 39%, 49%);
 }
 
 .color-picker input[type="radio"]#blue {
@@ -105,10 +105,10 @@ h3 {
 }
 
 .pink {
-    --clr-bg: hsl(309, 27%, 90%);
-    --clr-body-bg: hsl(350, 73%, 77%);
-    --clr-text: hsl(310 50% 15%);
-    --clr-heading: hsl(310 50% 25%);
+    --clr-bg: hsl(280, 100%, 80%);
+    --clr-body-bg: hsl(275, 100%, 17%);
+    --clr-text: hsl(309, 49%, 76%);
+    --clr-heading: hsl(309, 49%, 76%);
 }
 
 .blue {
@@ -126,17 +126,17 @@ h3 {
 }
 
 .dark {
-    --clr-bg: hsl(209 50% 80%);
-    --clr-body-bg: hsl(209 50% 5%);
+    --clr-body-bg: hsl(209, 70%, 62%);
+    --clr-bg: hsl(209 50% 5%);
     --clr-text: hsl(209 50% 90%);
     --clr-heading: hsl(209 50% 80%);
 }
 
 :root:has(#pink:checked) {
-    --clr-bg: hsl(310 50% 90%);
-    --clr-body-bg: hsl(350, 73%, 77%);
-    --clr-text: hsl(310 50% 15%);
-    --clr-heading: hsl(310 50% 25%);
+    --clr-bg: hsl(280, 100%, 80%);
+    --clr-body-bg: hsl(275, 100%, 17%);
+    --clr-text: hsl(309, 49%, 76%);
+    --clr-heading: hsl(309, 49%, 76%);
 }
 
 :root:has(#blue:checked) {
@@ -154,8 +154,8 @@ h3 {
 }
 
 :root:has(#dark:checked) {
-    --clr-bg: hsl(209 50% 80%);
-    --clr-body-bg: hsl(209 50% 5%);
+    --clr-body-bg: hsl(209, 70%, 62%);
+    --clr-bg: hsl(209 50% 5%);
     --clr-text: hsl(209 50% 90%);
     --clr-heading: hsl(209 50% 80%);
 }

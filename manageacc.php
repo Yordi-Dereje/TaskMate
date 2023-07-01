@@ -1,3 +1,35 @@
+<?php
+session_start();
+
+include("db/connection.php");
+include("db/functions.php");
+
+$user_data = check_login($con);
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+$id = $user_data['id']; 
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$user_name = $_POST['user_name'];
+$password = $_POST['password'];
+$sec_q = $_POST['secQ'];
+$sec_a = $_POST['secA'];
+if(!empty($first_name) && !empty($last_name) && !empty($email) && !empty($phone) && !empty($user_name) && !empty($password) && !empty($sec_q) && !empty($sec_a)){
+		$query = "update users set FirstName='$first_name', LastName='$last_name', Email='$email', Phone='$phone', UserName='$user_name', Password='$password', SecQuestion='$sec_q', SecAnswer='$sec_a' where id='$id';";
+	  mysqli_query($con, $query);
+		header("Location: main.php");
+		die;
+	}
+	else{
+		echo "Please enter valid info";
+	}
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +37,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/manage.css?version1" />
-    <link rel="stylesheet" href="themeChanger.css?version1 "/>
+    <link rel="stylesheet" href="styles/manage.css?version4" />
+    <link rel="stylesheet" href="themeChanger.css?version4"/>
     <title>Manage account</title>
 </head>
 <body>  
@@ -16,10 +48,10 @@
         <h2>TaskMate</h2>
       </div>
       <ul>
-        <li><a href="main.html" onclick="toggle()"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <li><a href="new.html" onclick="toggle()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-        <li><a href="report.html" onclick="toggle()"><i class="fa fa-file-text" aria-hidden="true"></i></a></li>
-        <li><a href="manageacc.html" onclick="toggle()"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        <li><a href="main.php" onclick="toggle()"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a href="new.php" onclick="toggle()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+        <li><a href="report.php" onclick="toggle()"><i class="fa fa-file-text" aria-hidden="true"></i></a></li>
+        <!-- <li><a href="manageacc.php" onclick="toggle()"><i class="fa fa-user" aria-hidden="true"></i></a></li> -->
         <li><a href="front.html" onclick="toggle()"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
       </ul>
 

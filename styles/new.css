@@ -59,7 +59,7 @@ h4 {
 
 @keyframes slideInleft {
     from {
-        transform: translateX(-15vw);
+        transform: translateX(-12vw);
     }
 
     to {
@@ -69,7 +69,7 @@ h4 {
 
 @keyframes slideInright {
     from {
-        transform: translateX(15vw);
+        transform: translateX(12vw);
     }
 
     to {
@@ -121,6 +121,7 @@ label {
     font-size: 1.2em;
     color: var(--clr-body-bg);
     font-weight: 500;
+
 }
 
 .input-box input:focus~label,
@@ -137,8 +138,9 @@ label {
     font-size: 120%;
     padding-left: 5px;
     font-weight: 500;
-    padding: 22px 15px 0 0px;
+    padding: 22px 15px 0 10px;
     border-bottom: 2px var(--clr-body-bg) solid;
+    color: white;
 }
 
 .prclass {
@@ -173,6 +175,7 @@ select,
     padding-left: 5px;
     width: 100%;
     border-bottom: 2px var(--clr-body-bg) solid;
+    color: var(--clr-body-bg);
 }
 
 
@@ -225,7 +228,7 @@ select,
 .sidebar ul li a {
     background-color: var(--clr-body-bg);
     display: block;
-    padding: 8vh 10%;
+    padding: 6vh 10%;
     font-size: 20px;
     position: relative;
     color: white;

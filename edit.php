@@ -1,3 +1,49 @@
+<?php
+session_start();
+
+include("db/connection.php");
+include("db/functions.php");
+
+$user_data = check_login($con);
+
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+    if(!isset($_GET["id"])){
+      header("Location: main.php");
+      die;
+    }
+
+    $tid = $_GET["id"];
+    $query0 = "select * from tasks where TaskID='$tid' limit 1";
+    $result0 = mysqli_query($con, $query0);
+
+    if($result0 && mysqli_num_rows($result0) > 0){
+      $task_data = mysqli_fetch_assoc($result0);
+    }
+}
+
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    $tid = $_GET["id"];
+    $title = $_POST['title'];
+    $description = $_POST['description']; 
+    $category = $_POST['category'];
+    $date = $_POST['date'];
+    $status = (int)$_POST['status'];
+    $priority = (int)$_POST['priority'];
+  
+      if(!empty($title)){
+          $query = "update tasks set Title='$title', Description='$description', Category='$category', Date='$date', Status='$status', Priority='$priority' where TaskID='$tid'";
+          mysqli_query($con, $query);
+          header("Location: main.php");
+          die;
+      }
+      else{
+          echo "Please enter valid info";
+      }
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +51,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/new.css" />
+    <link rel="stylesheet" href="styles/new.css?version1" />
     <!-- <link rel="stylesheet" href="styles/color.css?version1" /> -->
-    <link rel="stylesheet" href="themeChanger.css?version1" />
+    <link rel="stylesheet" href="themeChanger.css?version2" />
     <title>My website</title>
 </head>
 <body>
@@ -18,9 +64,10 @@
         <h2>TaskMate</h2>
       </div>
       <ul>
-        <li><a href="main.html" onclick="toggle()"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <li><a href="new.html" onclick="toggle()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-        <li><a href="manageacc.html" onclick="toggle()"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        <li><a href="main.php" onclick="toggle()"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a href="new.php" onclick="toggle()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+        <li><a href="report.php" onclick="toggle()"><i class="fa fa-file-text" aria-hidden="true"></i></a></li>
+        <li><a href="manageacc.php" onclick="toggle()"><i class="fa fa-user" aria-hidden="true"></i></a></li>
       </ul>
 
         <div class="toggle" onclick="toggle()"></div>

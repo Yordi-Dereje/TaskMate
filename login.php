@@ -1,10 +1,44 @@
+<?php
+session_start();
+
+include("db/connection.php");
+include("db/functions.php");
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+  $user_name = $_POST['user_name'];
+	$password = $_POST['password'];
+
+	if(!empty($user_name) && !empty($password)){
+		$query = "select * from users where UserName = '$user_name' limit 1";
+		$result = mysqli_query($con, $query);
+
+		if($result && mysqli_num_rows($result) > 0){
+			$user_data = mysqli_fetch_assoc($result);
+			if($user_data['Password'] === $password){
+				$_SESSION['id'] = $user_data['id'];
+          header("Location: main.php");
+          die;
+				}
+      else{?>
+        <script>alert('Wrong username or password')</script>
+       <?php
+			}
+		}
+		else{
+			echo "Please enter some valid information!";
+		}
+	}
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/login.css?version3" />
+  <link rel="stylesheet" href="styles/login.css?version4" />
   <title>Document</title>
 </head>
 <body class="login_body">
@@ -13,7 +47,7 @@
       <h2>TASKMATE</h2>
       <ul>
         <li><a href="front.html">Home</a></li>
-        <li><a href="signup.html">Sign up</a></li>
+        <li><a href="signup.php">Sign up</a></li>
       </ul>
     </nav>
   </header> 

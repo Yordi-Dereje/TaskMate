@@ -1,10 +1,41 @@
+<?php
+session_start();
+
+include("db/connection.php");
+include("db/functions.php");
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+  $first_name = $_POST['first_name'];
+	$last_name = $_POST['last_name'];
+	$email = $_POST['email'];
+  $phone = $_POST['phone'];
+	$user_name = $_POST['user_name'];
+  $password = $_POST['password'];
+  $sec_q = $_POST['secQ'];
+  $sec_a = $_POST['secA'];
+
+	if(!empty($first_name) && !empty($last_name) && !empty($email) && !empty($phone) && !empty($user_name) && !empty($password) && !empty($sec_q) && !empty($sec_a)){
+		$query = "insert into users (FirstName, LastName, Email, Phone, UserName, Password, SecQuestion, SecAnswer) values ('$first_name', '$last_name', '$email', '$phone', '$user_name', '$password', '$sec_q', '$sec_a')";
+	  mysqli_query($con, $query);
+		header("Location: login.php");
+		die;
+	}
+	else{
+	?>
+  <script> alert('Please enter necessary input') </script>
+  <?php  
+	}
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/signup.css?version4" />
+  <link rel="stylesheet" href="styles/signup.css?version5" />
   <title>Document</title>
 </head>
 <body>
@@ -13,7 +44,7 @@
       <h2>TASKMATE</h2>
       <ul>
         <li><a href="front.html">Home</a></li>
-        <li><a href="login.html">Log In</a></li>
+        <li><a href="login.php">Log In</a></li>
       </ul>
     </nav>
   </header>
