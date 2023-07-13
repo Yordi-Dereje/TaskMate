@@ -15,7 +15,7 @@ $user_data = check_login($con);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/main.css?version10" />
+    <link rel="stylesheet" href="styles/main.css?version13" />
     <link rel="stylesheet" href="themeChanger.css?version5 " />
     <title>Home page</title>
 </head>
@@ -85,10 +85,11 @@ $user_data = check_login($con);
                             </form>
                         </div>
 
-                        <div class="today-date">
+                        
+                    </div>
+                    <div class="today-date">
                             <div class="event-date"><?php echo date('l M, d Y'); ?></div>
                         </div>
-                    </div>
                     <div class="filters">
                         <form method="post">
                             <div class="prop">
@@ -133,7 +134,7 @@ $user_data = check_login($con);
                             const eventdate = document.querySelector(".event-date");
                             eventdate.innerHTML = value; 
                         </script>
-                    <?php $query = "select * from tasks where UserID = '$id' and Date = '$ndate' order by Status, Priority desc";
+                    <?php $query = "select * from tasks where UserID = '$id' and Date = '$ndate' order by Priority desc, Status";
                     $run_query = mysqli_query($con, $query);
                     if(mysqli_num_rows($run_query) > 0){
                     foreach($run_query as $row2){
@@ -186,7 +187,7 @@ $user_data = check_login($con);
                     ?>
                     <?php 
                     
-                    $qu = "select * from tasks where UserID = '$id' and Date = '$currentDate' and Priority = '$pri' and Status = '$stat' order by Status, Priority desc";
+                    $qu = "select * from tasks where UserID = '$id' and Date = '$currentDate' and Priority = '$pri' and Status = '$stat' order by Priority desc, Status";
                     $run_qu = mysqli_query($con, $qu);
                     if(mysqli_num_rows($run_qu) > 0){
                     foreach($run_qu as $row3){
@@ -231,7 +232,7 @@ $user_data = check_login($con);
 
                 
                 if($bool == false){
-                $query2 = "select * from tasks where UserID = '$id' and Date='$currentDate' order by Status, Priority desc";
+                $query2 = "select * from tasks where UserID = '$id' and Date='$currentDate' order by Priority desc, Status";
                 $run_query = mysqli_query($con, $query2);
                 if(mysqli_num_rows($run_query) > 0){
                 foreach($run_query as $row2){

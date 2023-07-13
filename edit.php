@@ -51,8 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/new.css?version1" />
-    <!-- <link rel="stylesheet" href="styles/color.css?version1" /> -->
+    <link rel="stylesheet" href="styles/new.css?version2" />
     <link rel="stylesheet" href="themeChanger.css?version2" />
     <title>My website</title>
 </head>
@@ -74,7 +73,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     </div>
 </div>
 
-<h4><?php echo $user_data['FirstName'].' '.$user_data['LastName']; ?></h4>
   <div class="wrapper">
   <div class="sidespace">
       <label class="sidespace-text">Details</label>

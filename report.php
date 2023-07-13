@@ -16,7 +16,7 @@ $user_data = check_login($con);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/reports.css?version12" />
+    <link rel="stylesheet" href="styles/reports.css?version14" />
     <link rel="stylesheet" href="themeChanger.css?version4" />
     <title>My website</title>
 </head>
@@ -29,7 +29,6 @@ $user_data = check_login($con);
       <ul>
         <li><a href="main.php" onclick="toggle()"><i class="fa fa-home" aria-hidden="true"></i></a></li>
         <li><a href="new.php" onclick="toggle()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-        <!-- <li><a href="report.php" onclick="toggle()"><i class="fa fa-file-text" aria-hidden="true"></i></a></li> -->
         <li><a href="manageacc.php" onclick="toggle()"><i class="fa fa-user" aria-hidden="true"></i></a></li>
         <li><a href="front.html" onclick="toggle()"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
       </ul>
@@ -41,7 +40,7 @@ $user_data = check_login($con);
     <div class="datefilter">
         <div class="viewfilter">
             <form method="post">
-            <input type="date" placeholder="yyyy-mm-dd" maxlength="10" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" class="date-input" name="date-input"/>
+            <input type="date" placeholder="yyyy-mm-dd" maxlength="10" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" class="date-input" name="date-input" value = "<?php echo date('Y-m-d') ?>"/>
             <select required name="view" id="view">
                 <option value="" disabled selected hidden>View</option>
                 <option value="1"> Daily</option>

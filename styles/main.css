@@ -16,7 +16,10 @@ body {
 
 .toppart {
     display: flex;
-    justify-content: center;
+    justify-content: right;
+    top: 30px;
+    padding-right: 45px;
+
 }
 
 
@@ -52,7 +55,7 @@ body {
 }
 
 .cal .goto-today {
-    width: 70%;
+    width: 80%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -60,11 +63,7 @@ body {
     padding: 15px 20px;
     color: white;
     font-size: 1em;
-
-
 }
-
-
 
 .filters {
     background-color: var(--clr-body-bg);
@@ -151,7 +150,7 @@ select {
 
 .alltop {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 
@@ -301,7 +300,7 @@ form {
 .sidebar ul li a {
     background-color: var(--clr-body-bg);
     display: block;
-    padding: 6vh 10%;
+    padding: 9vh 10%;
     font-size: 20px;
     position: relative;
     color: white;
@@ -358,7 +357,7 @@ html {
 
 @media screen and (max-width: 900px) {
     .container {
-        min-height: 20vh;
+        min-height: 22vh;
         display: flex;
         flex-direction: column;
         border-radius: 20px;
@@ -368,12 +367,15 @@ html {
 
     .maindisp {
         width: 90vw;
+        height: 65vh;
     }
 
     .cal {
-        height: 15vh;
+        height: 12vh;
         width: 100%;
-        padding: 0 5px;
+        padding: 10px 5px;
+        margin-top: 20px;
+        font-size: 1.3em;
     }
 
     select {
@@ -385,7 +387,7 @@ html {
     }
 
     form {
-        gap: 30px;
+        gap: 10px;
     }
 
     .prem_button {
@@ -395,18 +397,18 @@ html {
     .profile h4 {
         color: white;
         margin-bottom: 5px;
-        font-size: 25px;
     }
 
     .mainpart {
         width: 95vw;
-        padding: 100px 20px;
+        padding: 70px 20px;
         position: relative;
 
     }
 
     .today-date {
         width: 100%;
+        flex-direction: column;
     }
 
     .cal,
@@ -425,7 +427,7 @@ html {
         width: 100%;
         height: 50px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         gap: 5px;
         padding: 15px 20px;
@@ -459,7 +461,7 @@ html {
         height: 30px;
         cursor: pointer;
         padding-right: 30px;
-        color: var(--clr-bg);
+        color: white;
     }
 
     .toggle:before {
@@ -468,9 +470,9 @@ html {
         top: 5px;
         width: 100%;
         height: 2px;
-        background: var(--clr-bg);
+        background: white;
         z-index: -1;
-        box-shadow: 0 10px 0 var(--clr-bg);
+        box-shadow: 0 10px 0 white;
         transition: 0.5s;
     }
 
@@ -480,7 +482,7 @@ html {
         bottom: 4px;
         width: 100%;
         height: 2px;
-        background: var(--clr-bg);
+        background: white;
         z-index: 1;
         transition: 0.5s;
     }
@@ -495,7 +497,7 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
-        top: 40px;
+        top: 80px;
         left: 0;
         width: 100vw;
         height: 100vh;
@@ -520,7 +522,7 @@ html {
 
     .sidebar ul li a {
         color: var(--clr-body-bg);
-        padding: 7vh 45%;
+        padding: 9vh 45%;
         background-color: var(--clr-bg);
         position: relative;
         margin: 0;
@@ -542,7 +544,8 @@ html {
         background: var(--clr-bg);
     }
 
-    h4 {
-        top: 50px;
+    .profile h4 {
+        margin-top: 14px;
+        margin-bottom: 14px;
     }
 }

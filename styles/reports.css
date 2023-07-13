@@ -277,7 +277,7 @@ input[type="radio"] {
 .sidebar ul li a {
     background-color: var(--clr-body-bg);
     display: block;
-    padding: 6vh 10%;
+    padding: 9vh 10%;
     font-size: 20px;
     position: relative;
     color: white;
@@ -308,6 +308,7 @@ input[type="radio"] {
         flex-direction: column;
         top: 100px;
         width: 85vw;
+        z-index: -1;
     }
 
     .wrap .form-box {
@@ -383,7 +384,7 @@ input[type="radio"] {
         height: 100vh;
         text-align: center;
         overflow: auto;
-        background: #fff;
+        background: var(--clr-bg);
         visibility: hidden;
         opacity: 0;
     }
@@ -402,8 +403,8 @@ input[type="radio"] {
 
     .sidebar ul li a {
         color: var(--clr-body-bg);
-        padding: 4vh 45%;
-        background-color: white;
+        padding: 9vh 45%;
+        background-color: var(--clr-bg);
         position: relative;
         margin: 0;
         text-decoration: none;

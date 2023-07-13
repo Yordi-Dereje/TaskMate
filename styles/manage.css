@@ -30,7 +30,7 @@ body {
 
 @keyframes slideInleft {
     from {
-        transform: translateX(-10vw);
+        transform: translateX(-8vw);
     }
 
     to {
@@ -40,7 +40,7 @@ body {
 
 @keyframes slideInright {
     from {
-        transform: translateX(10vw);
+        transform: translateX(8vw);
     }
 
     to {
@@ -50,7 +50,7 @@ body {
 
 
 .wrapper .form-box {
-    width: 60%;
+    width: 50%;
     padding: 20px;
     height: 100%;
     animation: slideInleft 2.5s ease-in 0s 1 normal none;
@@ -163,7 +163,7 @@ select {
 .sidebar ul li a {
     background-color: var(--clr-body-bg);
     display: block;
-    padding: 6vh 10%;
+    padding: 9vh 10%;
     font-size: 20px;
     position: relative;
     color: white;
@@ -194,7 +194,7 @@ select {
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
     animation: slideInright 2.5s ease-in 0s 1 normal none;
-    z-index: 1;
+    z-index: -1;
 }
 
 .sidespace .sidespace-text {
@@ -221,9 +221,11 @@ h4 {
 
     .wrapper .sidespace {
         width: 100%;
-        height: 100%;
+        height: 15%;
         border-radius: 15px;
         animation: slideInright 2.5s ease-in 0s 1 normal none;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
 
     .sidebar h2 {
@@ -239,12 +241,15 @@ h4 {
         border: 2px solid var(--clr-body-bg);
         border-radius: 15px;
         z-index: -1;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
     }
 
     .wrapper {
         display: flex;
         flex-direction: column;
-        top: 150px;
+        top: 100px;
+        z-index: -1;
     }
 
     .profile h2 {
@@ -282,7 +287,7 @@ h4 {
         justify-content: space-between;
         align-items: center;
         padding: 20px 100px;
-        z-index: 1;
+        z-index: -1;
         transition: all 0.5s ease;
     }
 
@@ -339,7 +344,7 @@ h4 {
         height: 100vh;
         text-align: center;
         overflow: auto;
-        background: #fff;
+        background: var(--clr-bg);
         visibility: hidden;
         opacity: 0;
     }
@@ -358,8 +363,8 @@ h4 {
 
     .sidebar ul li a {
         color: var(--clr-body-bg);
-        padding: 4vh 45%;
-        background-color: white;
+        padding: 9vh 45%;
+        background-color: var(--clr-bg);
         position: relative;
         margin: 0;
         text-decoration: none;
