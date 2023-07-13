@@ -47,6 +47,7 @@ body {
     color: white;
     border-radius: 10px;
     background-color: var(--clr-body-bg);
+    font-size: 1.7em;
 
 }
 
@@ -58,7 +59,8 @@ body {
     gap: 5px;
     padding: 15px 20px;
     color: white;
-    font-size: 1.4em;
+    font-size: 1em;
+
 
 }
 
@@ -69,7 +71,7 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
     padding: 15px 40px;
     color: white;
@@ -85,6 +87,7 @@ body {
     background-color: transparent;
     cursor: pointer;
     color: white;
+    font-size: 1em;
 }
 
 .filter-btn:hover {
@@ -98,6 +101,7 @@ body {
     overflow: hidden;
     border: 1px solid white;
     color: white;
+    font-size: 1em;
 
 
 }
@@ -131,6 +135,7 @@ select {
     cursor: pointer;
     color: var(--clr-body-bg);
     color: white;
+    font-size: 1em;
 }
 
 .cal .goto-today button:hover {
@@ -159,6 +164,7 @@ select {
     justify-content: right;
     padding: 25px;
     text-transform: capitalize;
+    width: 100%;
 }
 
 .maindisp {
@@ -262,47 +268,6 @@ form {
 }
 
 
-
-
-
-/* media queries */
-
-@media screen and (max-width: 900px) {
-    .container {
-        min-height: 10%;
-        flex-direction: column;
-        border-radius: 20px;
-        width: 90vw;
-        padding: 15px;
-    }
-
-    .maindisp {
-        width: 90vw;
-    }
-
-    .cal {
-        height: 10vh;
-        width: 100%;
-        padding: 0 5px;
-    }
-
-    select {
-        width: 120px;
-    }
-
-    .events {
-        width: 90vw;
-    }
-
-    form {
-        gap: 30px;
-    }
-
-    .prem_button {
-        margin-right: 7%;
-    }
-}
-
 .sidebar {
     background-color: var(--clr-body-bg);
     position: fixed;
@@ -330,6 +295,7 @@ form {
 .sidebar h4 {
     color: white;
     margin: 80px 0;
+    font-size: 25px;
 }
 
 .sidebar ul li a {
@@ -388,45 +354,48 @@ html {
 
 
 
-@media(max-width: 800px) {
+/* media queries */
 
+@media screen and (max-width: 900px) {
     .container {
-        height: 15vh;
-    }
-
-    .cal,
-    .filters {
+        min-height: 20vh;
         display: flex;
         flex-direction: column;
+        border-radius: 20px;
+        width: 90vw;
+        padding: 15px;
     }
 
-    .today-date {
+    .maindisp {
+        width: 90vw;
+    }
+
+    .cal {
+        height: 15vh;
         width: 100%;
+        padding: 0 5px;
     }
 
-    .sidebar h4 {
-        color: white;
-        margin: 0px 0;
+    select {
+        width: 120px;
     }
 
-    .cal .goto-today {
-        width: 100%;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding: 15px 20px;
-        color: white;
-
+    .events {
+        width: 90vw;
     }
 
-    .goto {
-        width: 60vw;
+    form {
+        gap: 30px;
+    }
+
+    .prem_button {
+        margin-right: 7%;
     }
 
     .profile h4 {
         color: white;
         margin-bottom: 5px;
+        font-size: 25px;
     }
 
     .mainpart {
@@ -436,15 +405,45 @@ html {
 
     }
 
+    .today-date {
+        width: 100%;
+    }
+
+    .cal,
+    .filters {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar h4 {
+        color: white;
+        margin: 0px 0;
+        font-size: 25px;
+    }
+
+    .cal .goto-today {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 15px 20px;
+        color: white;
+    }
+
+    .goto {
+        width: 60vw;
+    }
+
     .profile {
         top: 0;
         left: 0;
         width: 100%;
-        height: 10%;
         display: flex;
         justify-content: space-between;
-        /* align-items: center; */
-        padding: 20px 100px;
+        align-items: center;
+        padding: 40px 100px;
         z-index: 1;
         transition: all 0.5s ease;
     }
@@ -460,7 +459,7 @@ html {
         height: 30px;
         cursor: pointer;
         padding-right: 30px;
-        color: white;
+        color: var(--clr-bg);
     }
 
     .toggle:before {
@@ -469,9 +468,9 @@ html {
         top: 5px;
         width: 100%;
         height: 2px;
-        background: white;
-        z-index: 1;
-        box-shadow: 0 10px 0 var(--clr-body-bg);
+        background: var(--clr-bg);
+        z-index: -1;
+        box-shadow: 0 10px 0 var(--clr-bg);
         transition: 0.5s;
     }
 
@@ -481,14 +480,14 @@ html {
         bottom: 4px;
         width: 100%;
         height: 2px;
-        background: white;
+        background: var(--clr-bg);
         z-index: 1;
         transition: 0.5s;
     }
 
     .sidebar .profile {
         position: fixed;
-        padding: 30px 55px;
+        padding: 5px 55px;
     }
 
     .profile ul {
@@ -496,13 +495,13 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
-        top: 90px;
+        top: 40px;
         left: 0;
         width: 100vw;
         height: 100vh;
         text-align: center;
         overflow: auto;
-        background: #fff;
+        background: var(--clr-bg);
         visibility: hidden;
         opacity: 0;
     }
@@ -516,17 +515,16 @@ html {
 
     .profile.active ul li a {
         display: inline-block;
-        font-size: 2em;
+        font-size: 1.4em;
     }
 
     .sidebar ul li a {
         color: var(--clr-body-bg);
-        padding: 4vh 45%;
-        background-color: white;
+        padding: 7vh 45%;
+        background-color: var(--clr-bg);
         position: relative;
         margin: 0;
         text-decoration: none;
-        color: var(--clr-body-bg);
         letter-spacing: 2px;
         font-weight: 300;
         transition: 0.6s;
@@ -534,7 +532,7 @@ html {
 
     .sidebar ul li a:hover,
     .sidebar ul li a:active {
-        color: white;
+        color: var(--clr-bg);
         background: var(--clr-body-bg);
     }
 
@@ -544,4 +542,7 @@ html {
         background: var(--clr-bg);
     }
 
+    h4 {
+        top: 50px;
+    }
 }

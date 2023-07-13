@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/new.css?version5" />
+    <link rel="stylesheet" href="styles/new.css?version8" />
     <link rel="stylesheet" href="themeChanger.css?version4" />
     <title>My website</title>
 </head>
@@ -73,20 +73,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     
     <br> <select name="category" id="category" required>
         <option value="" disabled selected hidden>Category</option>
-        <option value="reading">Reading</option>
-        <option value="work">Work</option>
-        <option value="religion">Religion</option>
-        <option value="sports">Sports</option>
-        <option value="nutrition">Nutrition</option>
-        <option value="entertainment">Entertainment</option>
-        <option value="home">Home</option>
-        <option value="finance">Finance</option>
-        <option value="social">Social</option>
-        <option value="outdoor">Outdoor</option>
-        <option value="health">Health</option>
         <option value="art">Art</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="finance">Finance</option>
+        <option value="health">Health</option>
+        <option value="home">Home</option>
         <option value="meditation">Meditation</option>
+        <option value="nutrition">Nutrition</option>
+        <option value="outdoor">Outdoor</option>
+        <option value="reading">Reading</option>
+        <option value="religion">Religion</option>
+        <option value="social">Social</option>
+        <option value="sports">Sports</option>
         <option value="study">Study</option>
+        <option value="work">Work</option>
      </select><br><br>
     <label> Date </label> <input type="date" name="date" class="date" value = "<?php echo date('Y-m-d') ?>"><br><br>
     <select required name="priority" id="priority" value="">

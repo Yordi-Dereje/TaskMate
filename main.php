@@ -15,7 +15,7 @@ $user_data = check_login($con);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/main.css?version6" />
+    <link rel="stylesheet" href="styles/main.css?version10" />
     <link rel="stylesheet" href="themeChanger.css?version5 " />
     <title>Home page</title>
 </head>
@@ -132,7 +132,6 @@ $user_data = check_login($con);
                             var value2 = " <?= $ndate ?>";
                             const eventdate = document.querySelector(".event-date");
                             eventdate.innerHTML = value; 
-                            alert(value2);
                         </script>
                     <?php $query = "select * from tasks where UserID = '$id' and Date = '$ndate' order by Status, Priority desc";
                     $run_query = mysqli_query($con, $query);
