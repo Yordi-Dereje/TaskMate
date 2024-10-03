@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include("db/connection.php");
-include("db/functions.php");
+include("../db/connection.php");
+include("../db/functions.php");
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
   $user_name = $_POST['user_name'];
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/login.css?version4" />
+  <link rel="stylesheet" href="../styles/login.css?version4" />
   <title>Document</title>
 </head>
 <body class="login_body">

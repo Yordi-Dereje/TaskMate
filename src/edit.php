@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include("db/connection.php");
-include("db/functions.php");
+include("../db/connection.php");
+include("../db/functions.php");
 
 $user_data = check_login($con);
 
@@ -127,5 +127,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   </div>
   </body>
 </html>
-<script src="scripts/stylemain.js"></script>
+<script src="../scripts/stylemain.js"></script>
 <script src="theme.js"></script>

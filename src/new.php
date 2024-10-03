@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include("db/connection.php");
-include("db/functions.php");
+include("../db/connection.php");
+include("../db/functions.php");
 
 $user_data = check_login($con);
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -35,8 +35,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/new.css?version13" />
-    <link rel="stylesheet" href="themeChanger.css?version4" />
+    <link rel="stylesheet" href="../styles/new.css" />
+    <link rel="stylesheet" href="../styles/themeChanger.css" />
     <title>My website</title>
 </head>
 <body>
@@ -103,5 +103,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 </div>
   </body>
 </html>
-<script src="scripts/stylemain.js"></script>
-<script src="theme.js"></script>
+<script src="../scripts/stylemain.js"></script>
+<script src="../scripts/theme.js"></script>
